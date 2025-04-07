@@ -1,8 +1,6 @@
-<div align="center">
-   <h1>HTTP server</h1>
-</div>
+= HTTP server
 
-## Basics
+== Basics
 
 A socket is an endpoint for sending or receiving data across a computer
 network. It is defined by an IP address and a port number. In this case,
@@ -11,29 +9,39 @@ Protocol (TCP) is part of the Internet Protocol Suite (TCP/IP). It is a
 connection-oriented protocol that ensures data is sent and received reliably and
 in order.
 
-## What is HTTP?
+== What is HTTP?
 
 The Hypertext Transfer Protocol (HTTP) is an application layer protocol used
 for transmitting hypermedia documents, such as HTML. It is stateless, meaning
 each request from a client is treated as an independent transaction, without any
 context from previous requests.
 
-[resources & specifications](https://developer.mozilla.org/en-US/docs/Web/HTTP/Resources_and_specifications)
+#link("https://developer.mozilla.org/en-US/docs/Web/HTTP/Resources_and_specifications", "resources & specifications")
 
-## HTTP Request and Response Structure
+== HTTP Request and Response Structure
 
 request: An HTTP request typically includes:
-- Method: (e.g., GET, POST) indicates the desired action. [for more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+
+- Method: (e.g., GET, POST) indicates the desired action.
+  #link("https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods", "learn more")
+
 - Path: The resource being requested (e.g., `/index.html`).
-- Headers: Additional information about the request (e.g., `Accept-Encoding`). [for more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+
+- Headers: Additional information about the request (e.g., `Accept-Encoding`).
+  #link("https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers", "for more")
+
 - Body: (optional) Contains data sent by the client, primarily in POST requests.
 
 response: An HTTP response includes:
-- Status Line: Indicates the status of the response (e.g., `HTTP/1.1 200 OK`). [for more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
+- Status Line: Indicates the status of the response (e.g., `HTTP/1.1 200 OK`).
+  #link("https://developer.mozilla.org/en-US/docs/Web/HTTP/Status", "for more")
+
 - Headers: Information about the response (e.g., `Content-Type`, `Content-Encoding`).
+
 - Body: The actual content being returned (e.g., HTML, JSON).
 
-## Implementing a HTTP server
+== Implementing a HTTP server
 
 - bind to a specific ip and port.
 - use a loop to listen for incoming connections from clients.
@@ -48,11 +56,10 @@ Additional things that can/should be implemented
 - implement compression
 - security (things like path traversal, CSRF, HTTPS implementation, etc etc)
 
-## Minimal and Extremely basic HTTP Server
+== Minimal and Extremely basic HTTP Server
 
-> [!IMPORTANT]
-> this is just to glance at in linear manner. this is not even remotely robust.
-> the `src/main.rs` contains another version of similarly limited HTTP server.
+_this is just to glance at in linear manner. this is not even remotely robust.
+the `src/main.rs` contains another version of similarly limited HTTP server._
 
 ```rust
 use std::fs::File;
