@@ -1,3 +1,10 @@
+#set page(paper: "a4")
+#set par(justify: true)
+#set text(
+  font: "New Computer Modern",
+  size: 12pt
+)
+
 = HTTP server
 
 == Basics
